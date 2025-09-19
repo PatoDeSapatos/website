@@ -1,6 +1,7 @@
 /* ========================================================================= */
 /* ================================ GENERAL ================================ */
 /* ========================================================================= */
+@import url(./css/layout.css);
 
 html, body { width: 100%; height: 100%;} /* set body to full width and height */
 
@@ -15,15 +16,18 @@ body
 
 	/* set default font color */
 	color: #333333;
+
+	display: flex;
+	flex-direction: column;
+	gap: 0;
 }
 
 * { font-family: 'Open Sans', sans; } /* set default font to open sans, embeded from google fonts */
 a { font-family: inherit; color: #00705e; text-decoration: none; outline: none;} /* remove links decorations */
 
-button
-{
+button {
 	/* apply vertical and horizontal padding */
-	padding: 10px 30px;
+	padding: 1em 3em;
 
 	/* set cursor to pointer, like links */
 	cursor: pointer;
@@ -38,11 +42,34 @@ button
 	/* set font style */
 	color: #333333;
 	text-transform: uppercase;
+	font-weight: 600;
+
+	transition: .25s;
+
+	&:hover {
+		background-color: var(--bg-dark);
+		color: var(--bg-light);
+	}
 }
 
-th { font-weight: normal; vertical-align: middle;} /* table cell custom style */
+button.dark {
+	background-color: var(--bg-dark);
+	color: var(--bg-light);
 
+	&:hover {
+		background-color: var(--secondary);
+	}
+}
 
+th {
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+p {
+	font-size: 1.1em;
+	margin: 0;
+}
 
 /* ======================================================================== */
 /* ================================ HEADER ================================ */
@@ -64,7 +91,7 @@ th { font-weight: normal; vertical-align: middle;} /* table cell custom style */
 	padding: 15px 0;
 
 	/* set background color */
-	background-color: rgba(36, 41, 46);
+	background-color: var(--primary);
 }
 
 #header a, #header_logo
@@ -168,28 +195,29 @@ th { font-weight: normal; vertical-align: middle;} /* table cell custom style */
 
 	/* set width to full and height to (full minus header height) */
 	width: 100%;
+	min-height: 100dvh;
 	height: calc(100% - 70px);
 
 	/* start content after header element, preventing overlap */
-	margin-top: 70px;
+	/* margin-top: 70px; */
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 #cover .cover_logo
 {
 	/* set position to relative, allowing using top attribute */
-	position: relative;
 
 	/* centering horizontally */
-	display: block;
-	margin: auto;
 
 	/* centering vertically */
-	top: 50%;
-	transform: translateY(-50%);
+	/* transform: translateY(-50%); */
 
-	/* set width */
-	width: 50vmax;
-	max-width: 100%; /* prevents overflow-y in small devices */
+	/* set width *//* prevents overflow-y in small devices */
+	width: 50%;
 }
 
 
@@ -212,17 +240,60 @@ th { font-weight: normal; vertical-align: middle;} /* table cell custom style */
 {
 	/* full width */
 	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 
 	/* set background color */
 	background-color: #F2F2F2;
 }
 
-#about p { width: 40vmax; } /* about text width */
+#about_text {
+	padding: 2em;
+	font-size: 1.15em;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0px;
+}
+
+
+#about_items {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 5em;
+}
+
+#about_items div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+#about h2 {
+	width: 100%;
+	text-align: center;
+	font-weight: inherit;
+	font-size: 1.15em;
+}
+
+#about p { 
+	text-align: center;
+	font-weight: 550;
+	margin: 0;
+	width: 60%;
+}
 
 #projects .flex_container
 {
 	/* container width */
-	width: 75%;
+	width: 100%;
 
 	/* flex properties */
 	display: flex;
@@ -240,9 +311,42 @@ th { font-weight: normal; vertical-align: middle;} /* table cell custom style */
 	border-radius: 10px;
 }
 
-#projects .flex_child { width: 120px; } /* set equal width for each child */
+#projects .flex_child {
+	 width: 100%;
+}
 
+#projects a {
+	text-align: center;
+}
 
+.info_panel {
+	color: #F8F8F8;
+}
+
+.info_item {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+
+.info_item a {
+	margin-top: 1.5em;
+}
+
+#wiki {
+	background: var(--primary);
+	padding: 30px 80px;
+}
+
+#calendar {
+	background: var(--secondary); 
+	padding: 25px 80px;
+}
+
+#media {
+	background: var(--tertiary);
+	padding: 65px 80px;
+}
 
 /* ======================================================================== */
 /* ================================ FOOTER ================================ */

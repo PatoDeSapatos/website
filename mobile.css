@@ -4,25 +4,13 @@
 {
 	h1 { font-size: 1.8em; } /* shorten h1 font size a little */
 
-	th
-	{
-		/* set block display */
-		display: block;
-
-		/* set full width */
-		width: 100% !important;
-
-		/* set padding and margin */
-		padding: 0;
-		margin: 7.5vh 0;
-
-		/* centering text */
-		text-align: center !important;
-	}
-
 	.whitespace { height: 10vh; } /* change whitespace height */
 
-	.title { font-size: 1.8em; } /* shorten title size a little */
+	.title { font-size: 1.8em !important; } /* shorten title size a little */
+
+	#cover .cover_logo {
+		width: 90% !important;
+	}
 
 	#header {height: 7.5% !important;}
 
@@ -44,7 +32,19 @@
 		left: 55% !important;
 	}
 
-	#about p { width: 85% !important; } /* increase about text width */
+	#about h2 {
+		font-size: 1em !important;
+	}
+
+	#about p { 
+		width: 85% !important;
+		font-size: 1em !important;
+	}
+
+	#about_items {
+		flex-direction: column;
+		gap: 3em;
+	}
 
 	#wiki, #calendar, #media { padding: 10px 50px !important;} /* change padding for better readability */
 
