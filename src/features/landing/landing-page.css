@@ -1,7 +1,7 @@
 /* ========================================================================= */
 /* ================================ GENERAL ================================ */
 /* ========================================================================= */
-@import url(./css/layout.css);
+@import url("../../css/layout.css");
 
 html, body { width: 100%; height: 100%;} /* set body to full width and height */
 
@@ -196,7 +196,6 @@ p {
 	/* set width to full and height to (full minus header height) */
 	width: 100%;
 	min-height: 100dvh;
-	height: calc(100% - 70px);
 
 	/* start content after header element, preventing overlap */
 	/* margin-top: 70px; */
@@ -320,6 +319,11 @@ p {
 }
 
 .info_panel {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 10em;
 	color: #F8F8F8;
 }
 
